@@ -195,12 +195,15 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- research themes ---------- */
 
-/* Coda to the lede, once the four questions have been named. Right-aligned
-   and rule-less: it is the one deliberate break from the page's left axis,
-   which is what marks it as an aside rather than part of the argument. */
+/* Coda to the lede, once the four questions have been named. Right-aligned:
+   the one deliberate break from the page's left axis, which is what marks it
+   as an aside rather than part of the argument. The rule sits on the right,
+   where the ragged edge is flush and the two reinforce each other. */
 .epigraph {
   text-align: right;
   margin: 0 0 2.2rem;
+  padding-right: 1.1rem;
+  border-right: 2px solid var(--rule-strong);
 }
 .epigraph blockquote { margin: 0; }
 .epigraph p {
