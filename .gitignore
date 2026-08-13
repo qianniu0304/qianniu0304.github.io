@@ -1,0 +1,10 @@
+.DS_Store
+.claude/settings.local.json
+
+# Source material stays local; only derived web assets are published.
+# Blanket *.pdf: the earlier per-filename rules failed to match a Japanese
+# filename, and a source PDF reached a commit as a result.
+*.pdf
+
+# Uncropped portrait; the published crop lives at assets/profile.jpg
+/profile.jpg
