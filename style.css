@@ -303,6 +303,10 @@ p:last-child { margin-bottom: 0; }
 }
 .what { font-size: .99rem; }
 .what b { font-weight: 650; }
+/* A linked entry sits beside unlinked ones, so keep the text colour and let
+   the underline alone carry the affordance. */
+.what a { color: inherit; text-decoration-color: var(--rule-strong); }
+.what a:hover { color: var(--accent); }
 .where { color: var(--text-muted); font-size: .95rem; }
 .detail { display: block; color: var(--text-faint); font-size: .89rem; margin-top: .3rem; line-height: 1.5; }
 
