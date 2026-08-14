@@ -44,6 +44,25 @@ python3 -m http.server 8000
 - **Colors / type** — the CSS custom properties at the top of `style.css` (`:root` and the
   `prefers-color-scheme: dark` block) drive the whole palette.
 
+## Analytics
+
+Page views are counted by [GoatCounter](https://www.goatcounter.com/) via one `<script>` tag at
+the bottom of `index.html`. It stores no cookies and no personal data, so no consent banner is
+needed, and the free tier covers non-commercial sites.
+
+Setup, one time:
+
+1. Register the code `qianniu0304` at <https://www.goatcounter.com/signup>. The code becomes the
+   dashboard subdomain, `https://qianniu0304.goatcounter.com`.
+2. If a different code is registered, change the `data-goatcounter` URL in `index.html` to match,
+   otherwise hits are dropped.
+
+The dashboard reports visit counts, referrers, countries, browsers, and screen sizes. It does not,
+and cannot, identify individual visitors by name.
+
+Worth pairing with [Google Search Console](https://search.google.com/search-console), which shows
+the queries that lead people here. It needs a verification meta tag in `<head>`.
+
 ## Publishing
 
 Settings → Pages → Source: *Deploy from a branch* → `main` / `root`.
