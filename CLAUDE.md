@@ -15,14 +15,13 @@ These rules apply to all prose on the site and to anything drafted for the user.
 
 ## Voice in the Research Agenda
 
-The four directions carry different levels of personal ownership, and the grammar
+The three directions carry different levels of personal ownership, and the grammar
 should reflect that rather than being forced into one uniform pattern:
 
 - **I** and **II** are the user's own work, so first person is correct there
   ("My doctoral research pioneered...", "I lead...").
-- **III** and **IV** are team efforts. Keep the first person out: make the research
-  direction itself the subject ("This direction targets...", "Pursued jointly
-  with...").
+- **III** is a team effort. Keep the first person out: make the research
+  direction itself the subject ("This direction extends...").
 
 ## Publications
 
