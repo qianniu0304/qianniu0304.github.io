@@ -248,11 +248,8 @@ p:last-child { margin-bottom: 0; }
 
 .note { font-size: .88rem; color: var(--text-faint); margin-bottom: 1.6rem; }
 
-/* Symbol legend rides along with the Scholar note above the single list. */
-.note .legend { display: inline-block; margin-left: .5rem; }
-@media (max-width: 560px) {
-  .note .legend { display: block; margin: .3rem 0 0; }
-}
+/* Symbol legend sits on its own line under the Scholar note. */
+.note .legend { display: block; margin-top: .3rem; }
 
 .pubs { margin: 0; padding-left: 1.6rem; display: grid; gap: .95rem; }
 /* Title carries the default (brightest) colour; authors and venue recede. */
