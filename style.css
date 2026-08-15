@@ -248,20 +248,10 @@ p:last-child { margin-bottom: 0; }
 
 .note { font-size: .88rem; color: var(--text-faint); margin-bottom: 1.6rem; }
 
-.pub-group {
-  font-family: var(--sans);
-  font-size: .74rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 2.1rem 0 .9rem;
-  padding-bottom: .45rem;
-  border-bottom: 1px solid var(--rule);
-}
-.pub-group:first-of-type { margin-top: 0; }
-
-/* Symbol legend sits with the group whose entries actually carry it. */
-.group-note {
-  font-size: .82rem; color: var(--text-faint);
-  margin: -.35rem 0 .85rem;
+/* Symbol legend rides along with the Scholar note above the single list. */
+.note .legend { display: inline-block; margin-left: .5rem; }
+@media (max-width: 560px) {
+  .note .legend { display: block; margin: .3rem 0 0; }
 }
 
 .pubs { margin: 0; padding-left: 1.6rem; display: grid; gap: .95rem; }
