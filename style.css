@@ -246,12 +246,36 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- publications ---------- */
 
-.note { font-size: .88rem; color: var(--text-faint); margin-bottom: 1.6rem; }
+/* The scrolling list below supplies its own top padding, so the note keeps only
+   a small margin of its own. */
+.note { font-size: .88rem; color: var(--text-faint); margin-bottom: .3rem; }
 
 /* Symbol legend sits on its own line under the Scholar note. */
 .note .legend { display: block; margin-top: .3rem; }
 
+/* The list is capped at roughly five entries and scrolls for the rest, so the
+   section stays short next to its neighbours. The height is a viewport-aware
+   cap rather than a fixed count: entries wrap to different numbers of lines. */
+.pubs-scroll {
+  max-height: min(29rem, 68vh);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule-strong) transparent;
+  scrollbar-gutter: stable;
+  /* Softens the cut at both edges, which also reads as "more below". The list
+     carries matching padding, so at either end of the scroll the faded band
+     covers empty space rather than the first or last entry. */
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0, #000 1.3rem,
+    #000 calc(100% - 2.4rem), transparent 100%);
+  mask-image: linear-gradient(to bottom,
+    transparent 0, #000 1.3rem,
+    #000 calc(100% - 2.4rem), transparent 100%);
+}
+.pubs-scroll:focus-visible { outline-offset: 1px; }
+
 .pubs { margin: 0; padding-left: 1.6rem; display: grid; gap: .95rem; }
+.pubs-scroll > .pubs { padding-top: 1.3rem; padding-bottom: 2.4rem; padding-right: .4rem; }
 /* Title carries the default (brightest) colour; authors and venue recede. */
 .pubs li {
   font-size: .96rem; line-height: 1.52;
@@ -346,4 +370,7 @@ footer p { margin: 0 0 .3rem; }
   section { padding: .9rem 0; break-inside: avoid; }
   a { color: #000; text-decoration: none; }
   .pubs li, .themes p, .where { color: #222; }
+  /* Paper has no scrollbar: print every entry. */
+  .pubs-scroll { max-height: none; overflow: visible; -webkit-mask-image: none; mask-image: none; }
+  .pubs-scroll > .pubs { padding-top: 0; padding-bottom: 0; }
 }

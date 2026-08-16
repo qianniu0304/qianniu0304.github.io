@@ -31,9 +31,10 @@ python3 -m http.server 8000
 
 ## Updating content
 
-- **Publications** — edit the `<ol class="pubs">` lists in `index.html`. Each group has its own
-  `start=` attribute so numbering stays continuous; bump the later ones if you add entries to an
-  earlier group. The list intentionally shows only accepted work, no under-review submissions.
+- **Publications** — edit the `<ol class="pubs">` list in `index.html`. It sits inside a
+  `.pubs-scroll` box that caps the visible height at about five entries and scrolls for the rest;
+  the cap is `max-height` on `.pubs-scroll` in `style.css`, and printing ignores it. Adding or
+  removing entries needs no other change.
 - **Portrait** — replace `assets/profile.jpg` with another square crop (512×512 is plenty; it renders
   at 160&nbsp;px). To re-crop from an original:
   ```python
