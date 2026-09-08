@@ -19,7 +19,7 @@ assets/favicon.svg    favicon
 No build step, no dependencies. Static HTML/CSS with ~15 lines of JS for the
 active-section nav highlight.
 
-Source files (`CV_NiuQian_260526.pdf`, the uncropped `profile.jpg`) stay local and are
+Source files (`CV_NiuQian_260908.pdf`, the uncropped `profile.jpg`) stay local and are
 gitignored — only the derived web assets are published.
 
 ## Local preview
