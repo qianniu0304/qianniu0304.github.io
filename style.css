@@ -76,14 +76,9 @@ a:hover { text-decoration-thickness: 2px; }
   padding: .7rem var(--gutter);
   display: flex; align-items: baseline; gap: 1rem;
 }
-.nav-brand {
-  font-family: var(--sans);
-  font-weight: 600; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--text); text-decoration: none; white-space: nowrap;
-}
 .nav-links {
   list-style: none; display: flex; gap: .8rem; flex-wrap: nowrap;
-  margin: 0 0 0 auto; padding: 0;
+  margin: 0; padding: 0;
 }
 .nav-links a {
   font-family: var(--sans); font-size: .78rem; letter-spacing: .02em;
@@ -93,9 +88,9 @@ a:hover { text-decoration-thickness: 2px; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a.current { color: var(--text); border-bottom-color: var(--accent); }
 
+/* Phones hide the links, which would leave an empty bar, so drop it. */
 @media (max-width: 48rem) {
-  .nav-links { display: none; }
-  .nav-inner { justify-content: space-between; }
+  #nav { display: none; }
 }
 
 /* ---------- layout ---------- */
