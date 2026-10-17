@@ -82,7 +82,7 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--text); text-decoration: none; white-space: nowrap;
 }
 .nav-links {
-  list-style: none; display: flex; gap: 1.05rem; flex-wrap: wrap;
+  list-style: none; display: flex; gap: .8rem; flex-wrap: nowrap;
   margin: 0 0 0 auto; padding: 0;
 }
 .nav-links a {
@@ -154,8 +154,9 @@ p:last-child { margin-bottom: 0; }
 }
 
 .masthead h1 {
-  font-size: clamp(2.4rem, 8vw, 3.7rem);
+  font-size: clamp(1.9rem, 6.5vw, 2.75rem);
   line-height: 1.02;
+  white-space: nowrap;
   letter-spacing: -0.022em;
   font-weight: 400;
   margin: 0 0 .85rem;
