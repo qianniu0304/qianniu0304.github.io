@@ -300,6 +300,29 @@ p:last-child { margin-bottom: 0; }
 
 .pub-link { font-family: var(--sans); font-size: .8rem; white-space: nowrap; }
 
+/* ---------- presentations ---------- */
+
+/* Thumbnail beside the text; the image links to the full poster PDF. */
+.talks { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; }
+.talks > li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.1rem; align-items: start; }
+.talk-thumb { display: block; line-height: 0; }
+.talk-thumb img {
+  width: 100%; height: auto;
+  border: 1px solid var(--rule-strong); border-radius: 2px;
+  background: #fff;
+}
+.talk-thumb:hover img { border-color: var(--accent); }
+.talk-text { display: flex; flex-direction: column; gap: .2rem; font-size: .96rem; line-height: 1.45; }
+.talk-text > b { font-weight: 650; }
+.talk-text .authors { color: var(--text-muted); }
+.talk-text .authors b { font-weight: 700; white-space: nowrap; }
+.talk-text .when { padding-top: 0; }
+.talk-text .pub-link { margin-top: .2rem; }
+
+@media (max-width: 34rem) {
+  .talks > li { grid-template-columns: 5.5rem 1fr; gap: .9rem; }
+}
+
 /* ---------- timelines ---------- */
 
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
