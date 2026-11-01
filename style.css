@@ -275,6 +275,10 @@ p:last-child { margin-bottom: 0; }
 
 .pubs { margin: 0; padding-left: 1.6rem; display: grid; gap: .95rem; }
 .pubs-scroll > .pubs { padding-top: 1.3rem; padding-bottom: 2.4rem; padding-right: .4rem; }
+/* Same scroll box for presentations, taller because each entry carries a poster:
+   enough for the first poster and its text, with the next one peeking in. */
+.talks-scroll { max-height: min(42rem, 78vh); }
+.talks-scroll > .talks { padding-top: 1.3rem; padding-bottom: 2.4rem; padding-right: .4rem; }
 /* Title carries the default (brightest) colour; authors and venue recede. */
 .pubs li {
   font-size: .96rem; line-height: 1.52;
@@ -403,4 +407,5 @@ footer p { margin: 0 0 .3rem; }
   /* Paper has no scrollbar: print every entry. */
   .pubs-scroll { max-height: none; overflow: visible; -webkit-mask-image: none; mask-image: none; }
   .pubs-scroll > .pubs { padding-top: 0; padding-bottom: 0; }
+  .talks-scroll > .talks { padding-top: 0; padding-bottom: 0; }
 }
