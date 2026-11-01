@@ -311,15 +311,23 @@ p:last-child { margin-bottom: 0; }
 }
 .talks > li { display: flex; flex-direction: column; gap: .9rem; min-width: 0; }
 .talks > li.talk-wide { grid-column: 1 / -1; }
-.talk-thumb { display: block; line-height: 0; }
-.talk-thumb img {
-  width: 100%; height: auto;
-  border: 1px solid var(--rule-strong); border-radius: 3px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgb(0 0 0 / .06);
+/* Every poster sits in a frame of the same height, so the landscape row and
+   the portrait row carry equal weight; each poster is centred in its frame. */
+.talk-thumb {
+  height: 22rem; padding: .9rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--rule); border-radius: 4px;
+  line-height: 0;
   transition: border-color .15s;
 }
-.talk-thumb:hover img { border-color: var(--accent); }
+.talk-thumb:hover { border-color: var(--accent); }
+.talk-thumb img {
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  border: 1px solid var(--rule-strong); border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / .08);
+}
 .talk-text { display: flex; flex-direction: column; gap: .25rem; font-size: .96rem; line-height: 1.45; }
 .talk-text > b { font-weight: 650; font-size: 1.02rem; line-height: 1.35; }
 .talk-text .authors { color: var(--text-muted); }
@@ -329,6 +337,8 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 34rem) {
   .talks { grid-template-columns: 1fr; gap: 2.2rem; }
+  .talk-thumb { height: auto; padding: .7rem; }
+  .talk-thumb img { max-height: 26rem; }
 }
 
 /* ---------- timelines ---------- */
