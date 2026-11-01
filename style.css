@@ -302,30 +302,33 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- presentations ---------- */
 
-/* Portrait posters sit in a wide column beside the text; landscape posters
-   (.talk-wide) take the full measure above it. Each image links to the PDF. */
-.talks { list-style: none; margin: 0; padding: 0; display: grid; gap: 2.4rem; }
-.talks > li { display: grid; grid-template-columns: 15rem 1fr; gap: 1.6rem; align-items: start; }
-.talks > li.talk-wide { grid-template-columns: 1fr; gap: 1rem; }
+/* One grid for both orientations: poster on top, text below. Portrait posters
+   pair up two to a row; landscape posters (.talk-wide) span the full row.
+   Each image links to the PDF. */
+.talks {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2.6rem 1.75rem;
+}
+.talks > li { display: flex; flex-direction: column; gap: .9rem; min-width: 0; }
+.talks > li.talk-wide { grid-column: 1 / -1; }
 .talk-thumb { display: block; line-height: 0; }
 .talk-thumb img {
   width: 100%; height: auto;
   border: 1px solid var(--rule-strong); border-radius: 3px;
   background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / .06);
   transition: border-color .15s;
 }
 .talk-thumb:hover img { border-color: var(--accent); }
-.talk-text { display: flex; flex-direction: column; gap: .25rem; font-size: .98rem; line-height: 1.45; }
-.talk-text > b { font-weight: 650; font-size: 1.05rem; line-height: 1.35; }
+.talk-text { display: flex; flex-direction: column; gap: .25rem; font-size: .96rem; line-height: 1.45; }
+.talk-text > b { font-weight: 650; font-size: 1.02rem; line-height: 1.35; }
 .talk-text .authors { color: var(--text-muted); }
 .talk-text .authors b { font-weight: 700; white-space: nowrap; }
 .talk-text .when { padding-top: 0; }
 .talk-text .pub-link { margin-top: .3rem; }
 
-/* Narrow screens: every poster stacks above its text. */
-@media (max-width: 40rem) {
-  .talks > li { grid-template-columns: 1fr; gap: .9rem; }
-  .talks > li:not(.talk-wide) .talk-thumb { max-width: 16rem; }
+@media (max-width: 34rem) {
+  .talks { grid-template-columns: 1fr; gap: 2.2rem; }
 }
 
 /* ---------- timelines ---------- */
